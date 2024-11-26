@@ -10,7 +10,7 @@ export default {
   argTypes: {
     size: {
       control: { type: 'select' },
-      options: ['mobile', 'desktop'],
+      options: ['mobile', 'desktop', 'tools'],
     },
     variant: {
       control: { type: 'select' },

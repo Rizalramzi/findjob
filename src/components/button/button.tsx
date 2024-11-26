@@ -3,8 +3,8 @@ import React from 'react';
 
 interface ButtonProps {
   type?: 'button';
-  size?: 'mobile' | 'desktop';
-  variant?: 'full' | 'outline' | 'with-arrow';
+  size?: 'mobile' | 'desktop' | 'tools';
+  variant?: 'full' | 'outline' | 'with-arrow' | 'fullWhite';
   onClick?: () => void;
   children: React.ReactNode;
 }
@@ -20,6 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   const sizeClasses = {
     mobile: 'px-3 py-1 text-sm',
     desktop: 'px-[2.083vw] py-[1.042vw] text-[1.042vw]',
+    tools: 'px-[2.083vw] py-[0.521vw] text-[0.729vw] font-normal'
   }[size];
 
   // Kelas warna berdasarkan prop `variant`
@@ -27,6 +28,7 @@ const Button: React.FC<ButtonProps> = ({
     full: 'bg-main text-white rounded-[0.521vw]',
     outline: 'border border-main text-main rounded-[0.521vw]',
     'with-arrow': 'border border-main text-main flex item-center gap-[0.5vw] rounded-[0.521vw]',
+    fullWhite: 'bg-white text-main rounded-[0.521vw]'
   }[variant];
 
   return (

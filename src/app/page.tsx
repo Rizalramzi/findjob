@@ -1,13 +1,12 @@
 import Image from "next/image";
-import Logo from "../../public/logo.svg";
 import  Text  from "@/components/text/text";
 import  Button  from "@/components/button/button";
 import NavMenu from "@/components/navMenu/navMenu";
 import Card from "@/components/card/card";
 export default function Home() {
   return (
-    <div className="px-[4.167vw]"> 
-      <nav className="flex items-center justify-between py-[2vw]">
+    <div className="pb-[3vw]"> 
+      <nav className="flex items-center justify-between py-[2vw] px-[4.167vw]">
         <div className="flex items-center space-x-[8vw]">
           <div className="flex items-center space-x-[0.7vw]">
             <img src="/logo.svg" alt="" className="w-[2.604vw] h-[2.604vw]"/>
@@ -93,9 +92,137 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-[10vw]">
-
+      <section className="mt-[10vw] px-[8vw]">
+            <div className="w-full flex flex-col items-center">
+              <Text size={48} weight="regular" color="dark" children="Pekerjaan untukmu"/>
+              <div className="grid grid-cols-2 gap-[2vw] mt-[3vw]">
+                <div className="w-[31.25vw] h-[28vw] flex flex-col justify-center bg-white p-[3vw] rounded-[0.521vw] space-y-[1.5vw]">
+                    <div className="w-full flex items-center justify-between">
+                      <div className="flex items-center space-x-[1vw]">
+                        <img src="/profile.png" alt="" className="w-[3.125vw] h-[3.125vw]"/>
+                        <div>
+                          <Text size={20} weight="medium" color="dark" children="Convert Figma to HTML"/>
+                          <Text size={18} weight="regular" color="light-dark" children="Allians Wong"/>
+                        </div>
+                      </div>
+                      <img src="/save.svg" alt="" className="w-[2.083vw] h-[2.083vw]"/>
+                    </div>
+                    <div>
+                      <Text size={18} weight="light" color="dark" children="Saya mencari seorang pengembang web untuk melakukan slicing desain Figma menjadi kode HTML yang responsif dan berkualitas tinggi. Tugas utama Anda adalah mengubah desain UI/UX yang telah dibuat di Figma menjadi halaman web yang fungsional dengan HTML, CSS, dan JavaScript."/>
+                    </div>
+                    <div className="flex space-x-[0.6vw]">
+                      <Button type="button" size="tools" variant="full" children="HTML"/>
+                      <Button type="button" size="tools" variant="full" children="CSS"/>
+                      <Button type="button" size="tools" variant="full" children="Javascript"/>
+                    </div>
+                    <div className="flex space-x-[1vw] items-center">
+                      <div className="flex items-center space-x-[0.5vw]">
+                        <img src="/price.svg" alt="" className="w-auto h-[1.302vw]"/>
+                        <Text size={14} weight="regular" color="dark" children="25.00 USD / hrs"/>
+                      </div>
+                      <hr className="w-[0.01vw] h-[1vw] bg-dark" />
+                      <div className="flex items-center space-x-[0.5vw]">
+                        <img src="/location.svg" alt="" className="w-auto h-[1.302vw]"/>
+                        <Text size={14} weight="regular" color="dark" children="United State"/>
+                      </div>
+                    </div>
+                    <hr className="w-[15vw] h-[0.01vw] bg-dark"/>
+                    <div className="flex justify-between items-center">
+                      <Text size={18} weight="regular" color="dark" children="4 Hari yang lalu"/>
+                      <Button type="button" size="desktop" variant="full" children="Detail"/>
+                    </div>
+                </div>
+              </div>
+            </div>
       </section>
+
+      <section className="mt-[10vw] px-[8vw]">
+            <div className="w-full flex items-center">
+              <div className="w-[45%]">
+                  <img src="/about.svg" alt=""  className="w-[29.948vw] h-[29.948vw]"/>
+              </div>
+              <div className="w-[55%] space-y-[1.042vw]">
+                <Text size={64} weight="regular" color="dark">
+                  Tentang{' '}
+                  <span className="font-semibold text-main">findjob.</span>
+                </Text>
+                <Text size={24} weight="light" color="dark" children="FindJob adalah platform yang menghubungkan freelancer berbakat dengan perusahaan yang membutuhkan layanan profesional. Kami menyediakan beragam kategori pekerjaan, mulai dari desain grafis hingga pengembangan web, dengan antarmuka yang mudah digunakan dan sistem verifikasi untuk keamanan. Bergabunglah dengan kami untuk menemukan pekerjaan impian Anda atau freelancer terbaik untuk proyek Anda, karena kami percaya bahwa kolaborasi adalah kunci untuk mencapai hasil yang luar biasa.">
+
+                </Text>
+              </div>
+            </div>
+      </section>
+
+      <section className="mt-[10vw] px-[8vw]">
+        <div className="w-full flex items-center">
+          <div className="w-[55%]">
+                <Text size={64} weight="regular" color="dark">
+                  Alasan memilih{' '}
+                  <span className="font-semibold text-main">findjob.</span>
+                </Text>
+                <div className="flex items-center justify-start mt-[3vw]">
+                  <div className="grid grid-cols-2 gap-[2vw]">
+                    <div className="max-w-[18vw] space-y-[0.6vw]">
+                      <img src="/checklist.svg" alt=""  className="w-[2.604vw] h-[2.604vw]"/>
+                      <Text size={22} weight="medium" color="main" children="Beragam Kategori Pekerjaan"/>
+                      <Text size={20} weight="light" color="dark" children="Temukan berbagai jenis pekerjaan, mulai dari desain grafis hingga pengembangan web, sesuai dengan keahlian dan minat Anda."/>
+                    </div>
+                    <div className="max-w-[18vw] space-y-[0.6vw]">
+                      <img src="/checklist.svg" alt=""  className="w-[2.604vw] h-[2.604vw]"/>
+                      <Text size={22} weight="medium" color="main" children="Beragam Kategori Pekerjaan"/>
+                      <Text size={20} weight="light" color="dark" children="Temukan berbagai jenis pekerjaan, mulai dari desain grafis hingga pengembangan web, sesuai dengan keahlian dan minat Anda."/>
+                    </div>
+                    <div className="max-w-[18vw] space-y-[0.6vw]">
+                      <img src="/checklist.svg" alt=""  className="w-[2.604vw] h-[2.604vw]"/>
+                      <Text size={22} weight="medium" color="main" children="Beragam Kategori Pekerjaan"/>
+                      <Text size={20} weight="light" color="dark" children="Temukan berbagai jenis pekerjaan, mulai dari desain grafis hingga pengembangan web, sesuai dengan keahlian dan minat Anda."/>
+                    </div>
+                    <div className="max-w-[18vw] space-y-[0.6vw]">
+                      <img src="/checklist.svg" alt=""  className="w-[2.604vw] h-[2.604vw]"/>
+                      <Text size={22} weight="medium" color="main" children="Beragam Kategori Pekerjaan"/>
+                      <Text size={20} weight="light" color="dark" children="Temukan berbagai jenis pekerjaan, mulai dari desain grafis hingga pengembangan web, sesuai dengan keahlian dan minat Anda."/>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <div className="w-[45%]">
+            <img src="/reason.svg" alt=""  className="w-[29.896vw] h-[29.896vw]"/>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-[10vw] px-[8vw] flex justify-center">
+            <div className="bg-main w-[91.667vw] h-[26.042vw] rounded-[0.521vw] flex flex-col justify-center items-center space-y-[1.563vw]">
+                <Text size={48} weight="medium" color="white" children="Segera bergabung dengan kami
+                    di findjob." className="max-w-[35.469vw] text-center"/>
+                <Button 
+                 type="button"
+                 size="desktop"
+                 variant="fullWhite"
+                 children="Daftar Sekarang"
+                
+                />
+            </div>
+      </section>
+
+      <footer>
+        <div className="w-full mt-[10vw] bg-main">
+            <div className="w-1/2">
+              <div className="flex items-center">
+                <img src="/logo.svg" alt="" className="w-[2.604vw] h-[2.604vw]"/>
+                <Text
+                  size={24}
+                  weight="medium"
+                  color="white"
+                  children="findjob."
+                />
+              </div>
+            </div>
+            <div className="1/2">
+            
+            </div>
+        </div>
+      </footer>
       
     </div>
   );

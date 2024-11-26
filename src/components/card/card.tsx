@@ -3,7 +3,12 @@ import React from 'react';
 import Text from '../text/text'; // Pastikan path-nya sesuai
 
 interface CardProps {
-  type?: 'category' | 'job';
+  type: 'category' | 'job';
+  profilePicture?: string;
+  name?: string;
+  price?: string;
+  location?: string;
+  date?: string;
   title: string;
   imageUrl: string;
   description?: string; // Hanya ada pada card job
