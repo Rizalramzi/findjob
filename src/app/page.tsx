@@ -132,6 +132,80 @@ export default function Home() {
                       <Button type="button" size="desktop" variant="full" children="Detail"/>
                     </div>
                 </div>
+
+                <div className="w-[31.25vw] h-[28vw] flex flex-col justify-center bg-white p-[3vw] rounded-[0.521vw] space-y-[1.5vw]">
+                    <div className="w-full flex items-center justify-between">
+                      <div className="flex items-center space-x-[1vw]">
+                        <img src="/profile.png" alt="" className="w-[3.125vw] h-[3.125vw]"/>
+                        <div>
+                          <Text size={20} weight="medium" color="dark" children="Convert Figma to HTML"/>
+                          <Text size={18} weight="regular" color="light-dark" children="Allians Wong"/>
+                        </div>
+                      </div>
+                      <img src="/save.svg" alt="" className="w-[2.083vw] h-[2.083vw]"/>
+                    </div>
+                    <div>
+                      <Text size={18} weight="light" color="dark" children="Saya mencari seorang pengembang web untuk melakukan slicing desain Figma menjadi kode HTML yang responsif dan berkualitas tinggi. Tugas utama Anda adalah mengubah desain UI/UX yang telah dibuat di Figma menjadi halaman web yang fungsional dengan HTML, CSS, dan JavaScript."/>
+                    </div>
+                    <div className="flex space-x-[0.6vw]">
+                      <Button type="button" size="tools" variant="full" children="HTML"/>
+                      <Button type="button" size="tools" variant="full" children="CSS"/>
+                      <Button type="button" size="tools" variant="full" children="Javascript"/>
+                    </div>
+                    <div className="flex space-x-[1vw] items-center">
+                      <div className="flex items-center space-x-[0.5vw]">
+                        <img src="/price.svg" alt="" className="w-auto h-[1.302vw]"/>
+                        <Text size={14} weight="regular" color="dark" children="25.00 USD / hrs"/>
+                      </div>
+                      <hr className="w-[0.01vw] h-[1vw] bg-dark" />
+                      <div className="flex items-center space-x-[0.5vw]">
+                        <img src="/location.svg" alt="" className="w-auto h-[1.302vw]"/>
+                        <Text size={14} weight="regular" color="dark" children="United State"/>
+                      </div>
+                    </div>
+                    <hr className="w-[15vw] h-[0.01vw] bg-dark"/>
+                    <div className="flex justify-between items-center">
+                      <Text size={18} weight="regular" color="dark" children="4 Hari yang lalu"/>
+                      <Button type="button" size="desktop" variant="full" children="Detail"/>
+                    </div>
+                </div>
+
+                <div className="w-[31.25vw] h-[28vw] flex flex-col justify-center bg-white p-[3vw] rounded-[0.521vw] space-y-[1.5vw]">
+                    <div className="w-full flex items-center justify-between">
+                      <div className="flex items-center space-x-[1vw]">
+                        <img src="/profile.png" alt="" className="w-[3.125vw] h-[3.125vw]"/>
+                        <div>
+                          <Text size={20} weight="medium" color="dark" children="Convert Figma to HTML"/>
+                          <Text size={18} weight="regular" color="light-dark" children="Allians Wong"/>
+                        </div>
+                      </div>
+                      <img src="/save.svg" alt="" className="w-[2.083vw] h-[2.083vw]"/>
+                    </div>
+                    <div>
+                      <Text size={18} weight="light" color="dark" children="Saya mencari seorang pengembang web untuk melakukan slicing desain Figma menjadi kode HTML yang responsif dan berkualitas tinggi. Tugas utama Anda adalah mengubah desain UI/UX yang telah dibuat di Figma menjadi halaman web yang fungsional dengan HTML, CSS, dan JavaScript."/>
+                    </div>
+                    <div className="flex space-x-[0.6vw]">
+                      <Button type="button" size="tools" variant="full" children="HTML"/>
+                      <Button type="button" size="tools" variant="full" children="CSS"/>
+                      <Button type="button" size="tools" variant="full" children="Javascript"/>
+                    </div>
+                    <div className="flex space-x-[1vw] items-center">
+                      <div className="flex items-center space-x-[0.5vw]">
+                        <img src="/price.svg" alt="" className="w-auto h-[1.302vw]"/>
+                        <Text size={14} weight="regular" color="dark" children="25.00 USD / hrs"/>
+                      </div>
+                      <hr className="w-[0.01vw] h-[1vw] bg-dark" />
+                      <div className="flex items-center space-x-[0.5vw]">
+                        <img src="/location.svg" alt="" className="w-auto h-[1.302vw]"/>
+                        <Text size={14} weight="regular" color="dark" children="United State"/>
+                      </div>
+                    </div>
+                    <hr className="w-[15vw] h-[0.01vw] bg-dark"/>
+                    <div className="flex justify-between items-center">
+                      <Text size={18} weight="regular" color="dark" children="4 Hari yang lalu"/>
+                      <Button type="button" size="desktop" variant="full" children="Detail"/>
+                    </div>
+                </div>
               </div>
             </div>
       </section>
@@ -160,7 +234,7 @@ export default function Home() {
                   Alasan memilih{' '}
                   <span className="font-semibold text-main">findjob.</span>
                 </Text>
-                <div className="flex items-center justify-start mt-[3vw]">
+                <div className="flex items-center mt-[3vw]">
                   <div className="grid grid-cols-2 gap-[2vw]">
                     <div className="max-w-[18vw] space-y-[0.6vw]">
                       <img src="/checklist.svg" alt=""  className="w-[2.604vw] h-[2.604vw]"/>
@@ -185,7 +259,7 @@ export default function Home() {
                   </div>
                 </div>
           </div>
-          <div className="w-[45%]">
+          <div className="w-[45%] flex justify-end">
             <img src="/reason.svg" alt=""  className="w-[29.896vw] h-[29.896vw]"/>
           </div>
         </div>
@@ -205,16 +279,29 @@ export default function Home() {
             </div>
       </section>
 
-      <footer>
-        <div className="w-full mt-[10vw] bg-main">
+      <footer className="w-full mt-[10vw] bg-main">
+        <div className="px-[3vw]">
             <div className="w-1/2">
-              <div className="flex items-center">
-                <img src="/logo.svg" alt="" className="w-[2.604vw] h-[2.604vw]"/>
+              <div className="flex items-center space-x-[1vw]">
+                <svg className="w-[2.604vw] h-[2.604vw] stroke-white fill-transparent" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="1.41421" y="25" width="33.3553" height="33.3553" transform="rotate(-45 1.41421 25)"  stroke-width="2"/>
+                  <rect x="7.92758" y="28.0103" width="24.5165" height="24.5165" transform="rotate(-55 7.92758 28.0103)"  stroke-width="2"/>
+                  <rect x="14.5827" y="28.7916" width="15.6777" height="15.6777" transform="rotate(-65 14.5827 28.7916)"  stroke-width="2"/>
+                  <rect x="21.5805" y="28.4194" width="6.83883" height="6.83883" transform="rotate(-90 21.5805 28.4194)"  stroke-width="2"/>
+                </svg>
                 <Text
                   size={24}
                   weight="medium"
                   color="white"
                   children="findjob."
+                />
+              </div>
+              <div className="max-w-[26.979vw]">
+                <Text
+                size={20}
+                weight="regular"
+                color="white"
+                children="Sedikit lagi tentang finjob. FindJob adalah platform yang menghubungkan freelancer berbakat dengan perusahaan yang membutuhkan layanan profesional."
                 />
               </div>
             </div>
