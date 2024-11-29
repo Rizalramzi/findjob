@@ -23,15 +23,15 @@ export default {
       control: 'text',
     },
   },
-} as Meta<typeof Card>;  // Update tipe Meta sesuai dengan komponen Card
+} as Meta<typeof Card>;
 
-const Template: StoryFn<typeof Card> = (args) => <Card {...args} />;  // Gunakan StoryFn untuk menandai tipe story
+const Template: StoryFn<typeof Card> = (args) => <Card {...args} />; 
 
 export const CategoryCard = Template.bind({});
 CategoryCard.args = {
   type: 'category',
   title: 'Digital Business',
-  imageUrl: '/category-icon.svg',  // Pastikan gambar tersedia
+  imageUrl: '/category-icon.svg',  
 };
 
 export const JobCard = Template.bind({});
@@ -39,5 +39,5 @@ JobCard.args = {
   type: 'job',
   title: 'Front-End Developer',
   description: 'Mencari pengembang front-end dengan pengalaman React.js.',
-  imageUrl: '/job-icon.svg',  // Pastikan gambar tersedia
+  imageUrl: '/job-icon.svg', 
 };
