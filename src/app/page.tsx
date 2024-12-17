@@ -38,6 +38,7 @@ export default function Home() {
             size="desktop"
             variant="outline"
             children="Daftar"
+            href="/register"
           />
         </div>
       </nav>
@@ -279,6 +280,7 @@ export default function Home() {
                   size="desktop"
                   variant="fullWhite"
                   children="Daftar Sekarang"
+                  href="/register"
               />
               <div className="absolute left-[-4vw] top-[-15vw] w-[24.688vw] h-[24.688vw] border-[3vw] border-[#0F5F60] rounded-full border-t-transparent"></div>
               <div className="absolute left-[10vw] bottom-[-17vw] w-[24.688vw] h-[24.688vw] border-[3vw] border-[#0F5F60] rounded-full border-b-transparent"></div>
