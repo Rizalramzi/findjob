@@ -2,10 +2,10 @@ import React from 'react';
 import '../font.css';
 
 export interface InputProps {
-  type: 'text' | 'email' | 'password' | 'select' | 'file'; // Tambahkan "file"
-  label: string;
-  placeholder?: string; // Opsional, tidak relevan untuk tipe file atau select
-  options?: { value: string; label: string }[]; // Digunakan hanya untuk tipe select
+  type: 'text' | 'email' | 'password' | 'select' | 'file' | 'search';
+  label?: string;
+  placeholder?: string;
+  options?: { value: string; label: string }[];
 }
 
 const Input: React.FC<InputProps> = ({ type, label, placeholder, options }) => {
@@ -29,25 +29,26 @@ const Input: React.FC<InputProps> = ({ type, label, placeholder, options }) => {
             htmlFor="file-upload"
             className="cursor-pointer flex flex-col items-center justify-center"
           >
-            <div className=" p-[3vw] border border-black border-opacity-50 rounded-[1vw]">
+            <div className="p-[3vw] border border-black border-opacity-50 rounded-[1vw]">
               <img
                 src="/upload.svg"
                 alt="Upload"
                 className="w-[1.823vw] h-[1.823vw]"
               />
             </div>
-            <input
-              id="file-upload"
-              type="file"
-              className="hidden"
-            />
+            <input id="file-upload" type="file" className="hidden" />
           </label>
+        </div>
+      ) : type === 'search' ? (
+        <div className="border-[0.1vw] border-light-dark px-[1.5vw] py-[1vw] rounded-[1vw] flex items-center space-x-[1vw]">
+          <img src="/search.svg" alt="" className="w-[1.5vw] h-auto"/>
+          <input type="text" className=" w-full border-transparent outline-none text-[1vw] text-dark placeholder:text-[1vw]" placeholder={placeholder}/>
         </div>
       ) : (
         <input
           type={type}
           placeholder={placeholder}
-          className=" p-[1.302vw] border rounded-lg placeholder:text-[0.9vw] text-[0.9vw] w-full border-black border-opacity-50 outline-none"
+          className="p-[1.302vw] border rounded-lg placeholder:text-[0.9vw] text-[0.9vw] w-full border-black border-opacity-50 outline-none"
         />
       )}
     </div>
