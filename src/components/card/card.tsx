@@ -11,6 +11,7 @@ interface CardProps {
   date?: string;
   title: string;
   imageUrl?: string;
+  link?: string;
   description?: string; // Hanya ada pada card job
   skills?: string[]; // skills sebagai array string
 }
@@ -22,7 +23,8 @@ const Card: React.FC<CardProps> = ({
   description, 
   date, 
   location, 
-  price, 
+  price,
+  link ,
   skills 
 }) => {
   return (
@@ -41,30 +43,32 @@ const Card: React.FC<CardProps> = ({
           {description && <Text size={16} weight="light" color="dark">{description}</Text>}
         </div>
       ) : type === 'job-list' && (
-        <div className="max-w-[46.354vw] pb-[2vw] border-b-[0.052vw] space-y-[1.2vw]">
-          <div className="space-y-[0.5vw]">
-            <Text size={16} weight="light" color="dark">{date}</Text>
-            <Text size={24} weight="medium" color="dark">{title}</Text>
+        <a href={link}>
+          <div className="max-w-[46.354vw] pb-[2vw] border-b-[0.052vw] space-y-[1.2vw]">
+            <div className="space-y-[0.5vw]">
+              <Text size={16} weight="light" color="dark">{date}</Text>
+              <Text size={24} weight="medium" color="dark">{title}</Text>
+            </div>
+            <Text size={16} weight="light" color="dark">{description}</Text>
+            {skills && (
+              <div className="space-x-[1vw]">
+                {skills.map((skill, idx) => (
+                  <Button key={idx} type="button" size="tools" variant="full" children={skill}></Button>
+                ))}
+              </div>
+            )}
+            <div className="flex items-center space-x-[1vw]">
+              <div className="flex items-center space-x-[0.5vw]">
+                <img src="/location.svg" alt="" className="w-auto h-[1.302vw]" />
+                <Text size={14} weight="regular" color="dark">{location}</Text>
+              </div>
+              <div className="flex items-center space-x-[0.5vw]">
+                <img src="/price.svg" alt="" className="w-auto h-[1.302vw]" />
+                <Text size={14} weight="regular" color="dark">{price}</Text>
+              </div>
+            </div>
           </div>
-          <Text size={16} weight="light" color="dark">{description}</Text>
-          {skills && (
-            <div className="space-x-[1vw]">
-              {skills.map((skill, idx) => (
-                <Button key={idx} type="button" size="tools" variant="full" children={skill}></Button>
-              ))}
-            </div>
-          )}
-          <div className="flex items-center space-x-[1vw]">
-            <div className="flex items-center space-x-[0.5vw]">
-              <img src="/location.svg" alt="" className="w-auto h-[1.302vw]" />
-              <Text size={14} weight="regular" color="dark">{location}</Text>
-            </div>
-            <div className="flex items-center space-x-[0.5vw]">
-              <img src="/price.svg" alt="" className="w-auto h-[1.302vw]" />
-              <Text size={14} weight="regular" color="dark">{price}</Text>
-            </div>
-          </div>
-        </div>
+        </a>
       )}
     </div>
   );

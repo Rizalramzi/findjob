@@ -6,6 +6,7 @@ const fontSizeScale: { [key: number]: number } = {
     20: 1.042,
     24: 1.25,
     32: 1.667,
+    36: 1.875,
     48: 2.5,
     64: 3.333,
   };

@@ -1,11 +1,13 @@
 import  Text  from "@/components/text/text";
 import  Button  from "@/components/button/button";
 import NavMenu from "@/components/navMenu/navMenu";
+import Card from "@/components/card/card";
+import Input from "@/components/input/input"
 
-export default function Service() {
-    return(
-        <div>
-            <nav className="flex items-center justify-between py-[2vw] px-[4.167vw]">
+export default function jobDetail() {
+  return (
+    <div>
+      <nav className="flex items-center justify-between py-[2vw] px-[4.167vw]">
                 <div className="flex items-center space-x-[8vw]">
                 <div className="flex items-center space-x-[0.7vw]">
                     <img src="/logo.svg" alt="" className="w-[2.604vw] h-[2.604vw]"/>
@@ -18,11 +20,11 @@ export default function Service() {
                 </div>
                 <NavMenu
                     items={[
-                    { label: "Beranda", size: 20, weight: "regular", link:"/"},
-                    { label: "Eksplor Layanan", size: 20, weight: "regular", link:"/service" },
-                    { label: "Kategori", size: 20, weight: "regular", link:"category" },
-                    { label: "Tentang Kami", size: 20, weight: "regular", link:"about" },
-                    { label: "Kontak", size: 20, weight: "regular", link:"contact" },
+                            { label: "Beranda", size: 20, weight: "regular", link:"/"},
+                            { label: "Eksplor Layanan", size: 20, weight: "regular", link:"/service" },
+                            { label: "Kategori", size: 20, weight: "regular", link:"category" },
+                            { label: "Tentang Kami", size: 20, weight: "regular", link:"about" },
+                            { label: "Kontak", size: 20, weight: "regular", link:"contact" },
                     ]}/>
                 </div>
                 <div className="flex items-center space-x-[1vw]">
@@ -40,39 +42,104 @@ export default function Service() {
                     href="/register"
                 />
                 </div>
-            </nav>
-
-            <section className="px-[8vw] mt-[2vw]">
-        <div className="w-full flex items-center">
-          <div className="w-3/5 space-y-[2vw]">
-            <div className="space-y-[1.406vw]">
-              <div className="max-w-[43.75vw]">
-                <Text size={64} weight="regular" color="dark">
-                  Bantu bisnis tumbuh dengan{' '}
-                  <span className="font-semibold text-main">Profesional Berpengalaman</span>
+      </nav>
+        
+        <div className="px-[8vw] mt-[3vw] w-full flex justify-between">
+          <div className="w-3/4">
+            <Text size={36} weight="medium" color="dark" children="Create clean Bootstrap Page from existing HTML (1 Page)"/>
+            <div className="flex items-center space-x-[1vw] mt-[0.5vw]">
+              <Text size={16} weight="light" color="dark" children="Diunggah 4 hari lalu"/>
+              <div className="flex items-center space-x-[0.5vw]">
+                  <img src="/price.svg" alt="" className="w-auto h-[1.302vw]"/>
+                  <Text size={14} weight="regular" color="dark" children="25.00 USD / hrs"/>
+              </div>
+              <div className="flex items-center space-x-[0.5vw]">
+                  <img src="/location.svg" alt="" className="w-auto h-[1.302vw]"/>
+                  <Text size={14} weight="regular" color="dark" children="United State"/>
+              </div>
+            </div>
+            <Text size={20} weight="light" color="dark" className="mt-[2vw]">
+                <span>
+                Looking for a CSS/Bootstrap expert.
+                <br /><br />
+                I have a pure HTML /CSS/JS page, but it has a lot of messy CSS classes (no bootstrap).
+                <br /><br />
+                It's a very simple page with just 2 elements: a sidebar menu and center section.
+                <br /><br />
+                I need to create a brand new page that looks and functions exactly like the old one, but uses all new clean Bootstrap CSS.
+                <br /><br />
+                Need to create all new classes and copy existing styles to new classes.
+                <br /><br />
+                Need to update class names in Javascript, but should not have to change Javascript.
+                <br /><br />
+                New layout needs to maintain: <br /> -Light/Dark mode (already working) <br />-Sidebar collapse/expand (already working) <br />-Responsive layout (partly working)
+                <br /><br />
+                Estimated Timeline: ~5 hours
+                <br /><br />
+                Thank you.
+                </span>
+            </Text>
+            <Text size={20} weight="regular" color="dark" children="Project Type : One time Project" className="mt-[3vw]"/>
+            <div className=" mt-[3vw]">
+              <Text size={20} weight="regular" color="dark">
+                    <span>Skills :</span>
+              </Text>
+              <ul className="list-disc ps-[2vw]">
+                <li>
+                  <Text size={20} weight="light" color="dark" children="HTML"/>
+                </li>
+                <li>
+                  <Text size={20} weight="light" color="dark" children="CSS"/>
+                </li>
+                <li>
+                  <Text size={20} weight="light" color="dark" children="Javascript"/>
+                </li>
+                <li>
+                  <Text size={20} weight="light" color="dark" children="Bootstrap"/>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="w-1/4 flex flex-col items-start space-y-[1vw]">
+              <Button type="button" size="desktop" variant="full" children="Ajukan Sekarang"/>
+              <Button type="button" size="desktop" variant="outline" children="Simpan Pekerjaan"/>
+              <div>
+                <Text size={24} weight="regular" color="dark">
+                    <span>About the client</span>
+                </Text>
+                <Text size={20} weight="light" color="dark">
+                    <span>
+                        Payment method verified
+                        <br /><br />
+                        Rating is 5 out of 5.
+                        <br />
+                        5.0
+                        <br />
+                        5.00 of 36 reviews
+                        <br /><br />
+                        United State
+                        <br />
+                        NYC 9:20 AM 
+                        <br /><br />
+                        138 jobs posted
+                        <br />
+                        51% hire rate, 1 open job
+                        <br /><br />
+                        $54K total spent
+                        <br />
+                        80 hires, 3 active
+                        <br /><br />
+                        $18.63 /hr avg hourly rate paid
+                        <br />
+                        1,963 hours
+                        <br /><br /><br />
+                        Member since Oct 25, 2003
+                    </span>
                 </Text>
               </div>
-              <div className="max-w-[39.063vw]">
-                <Text size={20} weight="light" color="dark" children="Dukung pertumbuhan bisnis Anda dengan tenaga profesional berpengalaman dan layanan berkualitas. Kami siap membantu Anda mencapai target, mengatasi tantangan, dan meraih kesuksesan yang lebih tinggi."/>
-              </div>
-              <Button type="button" size="desktop" variant="full" children="Mulai Sekarang"/>
-            </div>
-            <div className="space-y-[1vw]">
-              <Text size={20} weight="regular" color="light-dark" children="Didukung Oleh :"/>
-              <div className="flex space-x-[1.5vw]">
-                <img src="/sponsor-1.svg" alt=""  className="w-auto h-[1.563vw]"/>
-                <img src="/sponsor-2.svg" alt=""  className="w-auto h-[1.563vw]"/>
-                <img src="/sponsor-3.svg" alt=""  className="w-auto h-[1.563vw]"/>
-                <img src="/sponsor-4.svg" alt=""  className="w-auto h-[1.563vw]"/>
-              </div>
-            </div>
-          </div>
-          <div className="w-2/5 flex items-center justify-center">
-            <img src="/hero-vector.svg" alt="" className="w-[31.25vw] h-[31.25vw]"/>
           </div>
         </div>
-      </section>
-      <footer className="w-full mt-[10vw] bg-main py-[2vw]">
+        <footer className="w-full mt-[10vw] bg-main py-[2vw]">
         <div className="px-[8vw] flex justify-between items-center">
             <div className="w-1/3 space-y-[2vw]">
               <div className="flex items-center space-x-[1vw]">
@@ -222,6 +289,6 @@ export default function Service() {
             </div>
         </div>
       </footer>
-        </div>
-    )
+    </div>
+  )
 }
