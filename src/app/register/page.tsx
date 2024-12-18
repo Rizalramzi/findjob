@@ -30,7 +30,7 @@ export default function Register(){
                         <button className="w-full py-[1.042vw] bg-main col-span-2 font-outfit text-white rounded-lg">Daftar Sekarang</button>
                         <Text size={16} weight="light" color="dark" className="col-span-2 text-center">
                             Sudah punya akun?{' '}
-                            <span className="font-light text-main">Masuk disini</span>
+                            <span className="font-light text-main"><a href="/login">Masuk disini</a></span>
                         </Text>
                     </div>
                 </div>
