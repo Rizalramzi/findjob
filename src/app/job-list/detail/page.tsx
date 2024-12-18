@@ -1,8 +1,6 @@
 import  Text  from "@/components/text/text";
 import  Button  from "@/components/button/button";
 import NavMenu from "@/components/navMenu/navMenu";
-import Card from "@/components/card/card";
-import Input from "@/components/input/input"
 
 export default function jobDetail() {
   return (
