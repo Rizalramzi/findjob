@@ -2,9 +2,48 @@ import  Text  from "@/components/text/text";
 import  Button  from "@/components/button/button";
 import NavMenu from "@/components/navMenu/navMenu";
 import Card from "@/components/card/card";
-import Input from "@/components/input/input"
+import Input from "@/components/input/input";
 
-export default function jobList() {
+interface ServiceData {
+    id: number;
+    title: string;
+    description: string;
+    price: string;
+    skills?: string[];
+  }
+  
+  async function fetchServiceData() {
+    try {
+      const response = await fetch('https://tech-class.datacore.machinevision.global/items/Service_ramzi', {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer vh073_EDr_XuWQ0PO1nm-ulUt6kUJmOh',
+          'Content-Type': 'application/json'
+        }
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+  
+      const data = await response.json();
+      
+      return data.data.map((item: any, index: number) => ({
+        id: index + 1,
+        title: item.title,
+        description: item.description,
+        price: `${item.price || 25.00} USD / hrs`,
+        skills: ['HTML', 'CSS', 'Tailwind']
+      }));
+    } catch (error) {
+      console.error('Error fetching service data:', error);
+      return [];
+    }
+  }
+
+export default async function jobList() {
+    const services = await fetchServiceData();
+
     return (
         <div className="">
              <nav className="flex items-center justify-between py-[2vw] px-[4.167vw]">
@@ -46,36 +85,18 @@ export default function jobList() {
             <div className="px-[8vw] w-full flex justify-between mt-[3vw]">
                 <div className="space-y-[3vw]">
                     <Input type="search" placeholder="Cari Pekerjaan"/>
-                    <Card
-                        type="job-list"
-                        title="Create clean Bootstrap Page from existing HTML (1 Page)"
-                        description="This project aims to take an existing HTML page and transform it into a more polished, efficient, and responsive design by utilizing the Bootstrap framework. By implementing Bootstrap’s grid system, components, and utilities, the goal is to improve the page’s user experience by ensuring it looks visually appealing and functions seamlessly across different screen sizes.."
-                        date="Diunggah 4 hari lalu"
-                        location="United States"
-                        price="25.00 USD / hrs"
-                        skills={['HTML', 'CSS', 'Tailwind']}
-                        link="/job-list/detail"  // Menampilkan keterampilan yang dibutuhkan untuk pekerjaan ini
-                    />
-                    <Card
-                        type="job-list"
-                        title="Create clean Bootstrap Page from existing HTML (1 Page)"
-                        description="This project aims to take an existing HTML page and transform it into a more polished, efficient, and responsive design by utilizing the Bootstrap framework. By implementing Bootstrap’s grid system, components, and utilities, the goal is to improve the page’s user experience by ensuring it looks visually appealing and functions seamlessly across different screen sizes.."
-                        date="Diunggah 4 hari lalu"
-                        location="United States"
-                        price="25.00 USD / hrs"
-                        skills={['HTML', 'CSS', 'Tailwind']}
-                        link="/job-list/detail"  // Menampilkan keterampilan yang dibutuhkan untuk pekerjaan ini
-                    />
-                    <Card
-                        type="job-list"
-                        title="Create clean Bootstrap Page from existing HTML (1 Page)"
-                        description="This project aims to take an existing HTML page and transform it into a more polished, efficient, and responsive design by utilizing the Bootstrap framework. By implementing Bootstrap’s grid system, components, and utilities, the goal is to improve the page’s user experience by ensuring it looks visually appealing and functions seamlessly across different screen sizes.."
-                        date="Diunggah 4 hari lalu"
-                        location="India"
-                        price="102.00 USD / hrs"
-                        skills={['HTML', 'CSS', 'Tailwind']}
-                        link="/job-list/detail"  // Menampilkan keterampilan yang dibutuhkan untuk pekerjaan ini
-                    />
+                    {services.map((service) => (
+                        <Card
+                            type="job-list"
+                            title={service.title}
+                            description={service.description}
+                            date="Diunggah 4 hari lalu"
+                            location="United States"
+                            price={service.price}
+                            skills={service.skills}
+                            link={`/job-list/${service.id}`}
+                        />
+                    ))}
                 </div>
                 <div>
                     <div className="sticky top-[1vw] space-y-[2vw] overflow-auto h-[50vw] scrollbar-hide">
