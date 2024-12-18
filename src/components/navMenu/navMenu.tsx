@@ -1,7 +1,6 @@
 // components/NavMenu.tsx
 import React from 'react';
 import Text from '../text/text';
-import { link } from 'fs';
 
 interface NavMenuProps {
   items: { label: string; size: number; weight: 'light' | 'regular' | 'medium' | 'semibold' | 'bold'; link?: string  }[];
