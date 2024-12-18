@@ -2,13 +2,6 @@ import Text from "@/components/text/text";
 import Button from "@/components/button/button";
 import NavMenu from "@/components/navMenu/navMenu";
 
-interface ServiceData {
-  id: number;
-  title: string;
-  description: string;
-  price: string;
-  skills?: string[];
-}
 
 async function fetchServiceDetail(id: number) {
   try {

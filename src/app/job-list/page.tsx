@@ -4,14 +4,13 @@ import NavMenu from "@/components/navMenu/navMenu";
 import Card from "@/components/card/card";
 import Input from "@/components/input/input";
 
-interface ServiceData {
-    id: number;
-    title: string;
-    description: string;
-    price: string;
-    skills?: string[];
-  }
-  
+interface Service {
+  id: number;
+  title: string;
+  description: string;
+  price: string;
+  skills: string[];
+}
   async function fetchServiceData() {
     try {
       const response = await fetch('https://tech-class.datacore.machinevision.global/items/Service_ramzi', {
@@ -85,7 +84,7 @@ export default async function jobList() {
             <div className="px-[8vw] w-full flex justify-between mt-[3vw]">
                 <div className="space-y-[3vw]">
                     <Input type="search" placeholder="Cari Pekerjaan"/>
-                    {services.map((service) => (
+                    {services.map((service: Service) => (
                         <Card
                             type="job-list"
                             title={service.title}
