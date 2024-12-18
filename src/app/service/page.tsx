@@ -1,7 +1,6 @@
 import  Text  from "@/components/text/text";
 import  Button  from "@/components/button/button";
 import NavMenu from "@/components/navMenu/navMenu";
-import Card from "@/components/card/card";
 
 export default function Service() {
     return(
