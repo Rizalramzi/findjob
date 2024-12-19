@@ -4,7 +4,7 @@ import NavMenu from "@/components/navMenu/navMenu";
 import Card from "@/components/card/card";
 import Input from "@/components/input/input";
 
-interface Service {
+interface ServiceData {
     id: number;
     title: string;
     description: string;
@@ -85,9 +85,8 @@ export default async function jobList() {
             <div className="px-[8vw] w-full flex justify-between mt-[3vw]">
                 <div className="space-y-[3vw]">
                     <Input type="search" placeholder="Cari Pekerjaan"/>
-                    {services.map((service: Service) => (
+                    {services.map((service) => (
                         <Card
-                            key={service.id}
                             type="job-list"
                             title={service.title}
                             description={service.description}
