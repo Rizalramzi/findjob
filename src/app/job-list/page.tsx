@@ -85,7 +85,7 @@ export default async function jobList() {
             <div className="px-[8vw] w-full flex justify-between mt-[3vw]">
                 <div className="space-y-[3vw]">
                     <Input type="search" placeholder="Cari Pekerjaan"/>
-                    {services.map((service) => (
+                    {services.map((service: ServiceData) => (
                         <Card
                             type="job-list"
                             title={service.title}
