@@ -5,12 +5,14 @@ import Card from "@/components/card/card";
 import Input from "@/components/input/input";
 
 interface Service {
+  [key: string]: any;
   id: number;
   title: string;
   description: string;
   price: string;
   skills: string[];
 }
+
   async function fetchServiceData() {
     try {
       const response = await fetch('https://tech-class.datacore.machinevision.global/items/Service_ramzi', {
@@ -86,6 +88,7 @@ export default async function jobList() {
                     <Input type="search" placeholder="Cari Pekerjaan"/>
                     {services.map((service: Service) => (
                         <Card
+                            key={service.id}
                             type="job-list"
                             title={service.title}
                             description={service.description}

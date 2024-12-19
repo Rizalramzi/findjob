@@ -79,8 +79,8 @@ export default async function JobDetail({ params }: { params: { id: string } }) 
               <Text size={14} weight="regular" color="dark" children="United State" />
             </div>
           </div>
-          <Text size={20} weight="light" color="dark" className="mt-[2vw]">
-            <span>{service.description}</span>
+          <Text size={20} weight="light" color="dark" className="mt-[2vw] max-w-[50vw]">
+            <span className="">{service.description}</span>
           </Text>
           <Text size={20} weight="regular" color="dark" children="Project Type : One time Project" className="mt-[3vw]" />
           <div className="mt-[3vw]">
