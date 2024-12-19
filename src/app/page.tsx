@@ -31,6 +31,7 @@ export default function Home() {
             size="desktop"
             variant="full"
             children="Masuk"
+            href="/login"
           />
           <Button
             type="button"

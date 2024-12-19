@@ -71,14 +71,16 @@ export default async function JobDetail({ params }: { params: { id: string } }) 
           />
         </div>
         <div className="flex items-center space-x-[1vw]">
-          <Button type="button" size="desktop" variant="full" children="Masuk" />
+          <Button type="button" size="desktop" variant="full" children="Masuk" href="/login" />
           <Button type="button" size="desktop" variant="outline" children="Daftar" href="/register" />
         </div>
       </nav>
 
       <div className="px-[8vw] mt-[3vw] w-full flex justify-between">
         <div className="w-3/4">
-          <Text size={36} weight="medium" color="dark" children={service.title} />
+          <Text size={36} weight="medium" color="dark" className="max-w-[55vw]">
+            <span>{service.title}</span>
+          </Text>
           <div className="flex items-center space-x-[1vw] mt-[0.5vw]">
             <Text size={16} weight="light" color="dark" children={service.date} />
             <div className="flex items-center space-x-[0.5vw]">
