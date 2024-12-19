@@ -10,6 +10,8 @@ interface ServiceData {
     description: string;
     price: string;
     skills?: string[];
+    date: string;
+    location: string;
   }
   
   async function fetchServiceData() {
@@ -33,7 +35,9 @@ interface ServiceData {
         title: item.title,
         description: item.description,
         price: `${item.price || 25.00} USD / hrs`,
-        skills: ['HTML', 'CSS', 'Tailwind']
+        skills: ['HTML', 'CSS', 'Tailwind'],
+        date: item.date,
+        location: item.location,
       }));
     } catch (error) {
       console.error('Error fetching service data:', error);
@@ -90,8 +94,8 @@ export default async function jobList() {
                             type="job-list"
                             title={service.title}
                             description={service.description}
-                            date="Diunggah 4 hari lalu"
-                            location="United States"
+                            date={service.date}
+                            location={service.location}
                             price={service.price}
                             skills={service.skills}
                             link={`/job-list/${service.id}`}

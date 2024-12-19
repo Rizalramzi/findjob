@@ -8,6 +8,8 @@ interface ServiceData {
   description: string;
   price: string;
   skills?: string[];
+  date: string;
+  location: string;
 }
 
 async function fetchServiceDetail(id: number) {
@@ -33,7 +35,9 @@ async function fetchServiceDetail(id: number) {
       title: serviceData.title,
       description: serviceData.description,
       price: `${serviceData.price || 25.00} USD / hrs`,
-      skills: ['HTML', 'CSS', 'Tailwind']
+      skills: ['HTML', 'CSS', 'Tailwind'],
+      date: serviceData.date,
+      location: serviceData.location,
     };
   } catch (error) {
     console.error('Error fetching service data:', error);
@@ -76,14 +80,14 @@ export default async function JobDetail({ params }: { params: { id: string } }) 
         <div className="w-3/4">
           <Text size={36} weight="medium" color="dark" children={service.title} />
           <div className="flex items-center space-x-[1vw] mt-[0.5vw]">
-            <Text size={16} weight="light" color="dark" children="Diunggah 4 hari lalu" />
+            <Text size={16} weight="light" color="dark" children={service.date} />
             <div className="flex items-center space-x-[0.5vw]">
               <img src="/price.svg" alt="" className="w-auto h-[1.302vw]" />
               <Text size={14} weight="regular" color="dark" children={service.price} />
             </div>
             <div className="flex items-center space-x-[0.5vw]">
               <img src="/location.svg" alt="" className="w-auto h-[1.302vw]" />
-              <Text size={14} weight="regular" color="dark" children="United State" />
+              <Text size={14} weight="regular" color="dark" children={service.location} />
             </div>
           </div>
           <Text size={20} weight="light" color="dark" className="mt-[2vw] max-w-[50vw]">
