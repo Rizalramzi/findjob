@@ -4,13 +4,15 @@ import NavMenu from "@/components/navMenu/navMenu";
 import Card from "@/components/card/card";
 import Input from "@/components/input/input";
 
+
 interface Service {
   id: number;
   title: string;
   description: string;
-  price: string;
-  skills: string[];
+  price?: string;
+  skills: string[]; // Opsional jika bisa undefined
 }
+
 
 
   async function fetchServiceData() {
@@ -28,14 +30,15 @@ interface Service {
       }
   
       const data = await response.json();
-      
-      return data.data.map((item: any, index: number) => ({
-        id: index + 1,
+
+      return data.data.map((item: Service, index: number) => ({
+        id: index + 1, // ID dihasilkan dari indeks
         title: item.title,
         description: item.description,
-        price: `${item.price || 25.00} USD / hrs`,
-        skills: ['HTML', 'CSS', 'Tailwind']
+        price: `${item.price || 25.00} USD / hrs`, // Default ke 25 jika tidak ada price
+        skills: ['HTML', 'CSS', 'Tailwind'] // Nilai statis untuk skills
       }));
+
     } catch (error) {
       console.error('Error fetching service data:', error);
       return [];
