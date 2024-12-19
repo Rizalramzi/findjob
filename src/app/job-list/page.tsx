@@ -4,17 +4,14 @@ import NavMenu from "@/components/navMenu/navMenu";
 import Card from "@/components/card/card";
 import Input from "@/components/input/input";
 
-
-interface Service {
-  id: number;
-  title: string;
-  description: string;
-  price?: string;
-  skills: string[]; // Opsional jika bisa undefined
-}
-
-
-
+interface ServiceData {
+    id: number;
+    title: string;
+    description: string;
+    price: string;
+    skills?: string[];
+  }
+  
   async function fetchServiceData() {
     try {
       const response = await fetch('https://tech-class.datacore.machinevision.global/items/Service_ramzi', {
@@ -30,15 +27,14 @@ interface Service {
       }
   
       const data = await response.json();
-
-      return data.data.map((item: Service, index: number) => ({
-        id: index + 1, // ID dihasilkan dari indeks
+      
+      return data.data.map((item: any, index: number) => ({
+        id: index + 1,
         title: item.title,
         description: item.description,
-        price: `${item.price || 25.00} USD / hrs`, // Default ke 25 jika tidak ada price
-        skills: ['HTML', 'CSS', 'Tailwind'] // Nilai statis untuk skills
+        price: `${item.price || 25.00} USD / hrs`,
+        skills: ['HTML', 'CSS', 'Tailwind']
       }));
-
     } catch (error) {
       console.error('Error fetching service data:', error);
       return [];
@@ -89,9 +85,8 @@ export default async function jobList() {
             <div className="px-[8vw] w-full flex justify-between mt-[3vw]">
                 <div className="space-y-[3vw]">
                     <Input type="search" placeholder="Cari Pekerjaan"/>
-                    {services.map((service: Service) => (
+                    {services.map((service) => (
                         <Card
-                            key={service.id}
                             type="job-list"
                             title={service.title}
                             description={service.description}
