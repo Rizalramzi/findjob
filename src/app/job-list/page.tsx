@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from 'react';
 import  Text  from "@/components/text/text";
 import  Button  from "@/components/button/button";
 import NavMenu from "@/components/navMenu/navMenu";
@@ -45,8 +48,19 @@ interface ServiceData {
     }
   }
 
-export default async function jobList() {
-    const services = await fetchServiceData();
+  export default function JobList() {
+    const [services, setServices] = useState<ServiceData[]>([])
+    const [searchQuery, setSearchQuery] = useState('')
+  
+    useEffect(() => {
+      fetchServiceData().then(setServices)
+    }, [])
+  
+    const filteredServices = services.filter(service =>
+      service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.location.toLowerCase().includes(searchQuery.toLowerCase())
+    )
 
     return (
         <div className="">
@@ -89,19 +103,28 @@ export default async function jobList() {
             </nav>
             <div className="px-[8vw] w-full flex justify-between mt-[3vw]">
                 <div className="space-y-[3vw]">
-                    <Input type="search" placeholder="Cari Pekerjaan"/>
-                    {services.map((service: ServiceData) => (
-                        <Card
-                            type="job-list"
-                            title={service.title}
-                            description={service.description}
-                            date={service.date}
-                            location={service.location}
-                            price={service.price}
-                            skills={service.skills}
-                            link={`/job-list/${service.id}`}
-                        />
-                    ))}
+                    <Input type="search" placeholder="Cari Pekerjaan"  value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}/>
+                    {filteredServices.map((service: ServiceData) => (
+            <Card
+              key={service.id}
+              type="job-list"
+              title={service.title}
+              description={service.description}
+              date={service.date}
+              location={service.location}
+              price={service.price}
+              skills={service.skills}
+              link={`/job-list/${service.id}`}
+            />
+          ))}
+          {filteredServices.length === 0 && (
+            <div className="text-center py-8">
+              <Text size={18} weight="regular" color="main">
+                No jobs found matching your search criteria.
+              </Text>
+            </div>
+          )}
                 </div>
                 <div>
                     <div className="sticky top-[1vw] space-y-[2vw] overflow-auto h-[50vw] scrollbar-hide">
