@@ -5,13 +5,13 @@ import Card from "@/components/card/card";
 import Input from "@/components/input/input";
 
 interface Service {
-  [key: string]: any;
   id: number;
   title: string;
   description: string;
   price: string;
   skills: string[];
 }
+
 
   async function fetchServiceData() {
     try {
